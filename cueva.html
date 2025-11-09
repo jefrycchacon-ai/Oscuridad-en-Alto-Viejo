@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>La Cueva — Alto Viejo</title>
+  <link rel="stylesheet" href="css_estilo.css">
+  <style>
+    body {
+      margin: 0;
+      background: #000 url('cueva_fondo.jpg') center/cover no-repeat fixed;
+      color: #e0e0e0;
+      font-family: "Spectral SC", serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+/* Botón de regreso al mapa */
+.btn-back {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.65);
+  color: #e0e0e0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Spectral SC", serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  z-index: 100;
+  transition: all .2s ease;
+}
+
+.btn-back:hover {
+  background: #222;
+  border-color: #fff;
+}
+
+    .opciones {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .opciones button {
+      width: 300px;
+      padding: 14px 20px;
+      background: rgba(0,0,0,0.7);
+      border: 2px solid #e0e0e0;
+      color: #e0e0e0;
+      font-size: 14px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .opciones button:hover {
+      background: #222;
+      border-color: #fff;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #111;
+      padding: 30px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .close {
+      color: #e0e0e0;
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <a class="btn-back" href="index.html">← Volver al mapa</a>
+
+  <h1>¿QUÉ HARÍAS SI ENCUENTRAS LA CUEVA?</h1>
+
+  <div class="opciones">
+    <button onclick="abrirModal('modalA')">A. Me quedo quiet@</button>
+    <button onclick="abrirModal('modalB')">B. Entro sin pensarlo</button>
+    <button onclick="abrirModal('modalC')">C. Me alejo, pero la cueva aparece</button>
+  </div>
+
+  <!-- Modales -->
+  <div id="modalA" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal('modalA')">&times;</span>
+      <h2>Opción A: Me quedo quiet@</h2>
+      <p>La cueva respira. No es metáfora. El aire entra y sale como si tuviera pulmones. El silencio se convierte en un susurro. Algo se mueve dentro, pero no se acerca. Solo espera.</p>
+    </div>
+  </div>
+
+  <div id="modalB" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal('modalB')">&times;</span>
+      <h2>Opción B: Entro sin pensarlo</h2>
+      <p>La piedra bajo tus pies cruje. El aire se vuelve más denso. Cada paso te aleja del mundo conocido. El túnel se curva, como si te guiara.</p>
+    </div>
+  </div>
+
+  <div id="modalC" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal('modalC')">&times;</span>
+      <h2>Opción C: Me alejo</h2>
+      <p>Corres. No miras atrás. Pero cada vez que parpadeas, la cueva está ahí. En el reflejo del espejo. En la sombra de tu habitación. En el sueño que se repite.</p>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function cerrarModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+</body>
+</html>
